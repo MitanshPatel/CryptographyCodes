@@ -4,6 +4,27 @@ using namespace std;
 
 // input: p, a, b, x1, y1, x2, y2 (97, 2, 3, 17, 10, 95, 31)
 
+int inverseMod(int b, int a) {
+    int temp = a;
+    int y1 = 0, y2 = 1;
+    int x1 = 1, x2 = 0;
+    int q, r, xtemp, ytemp;
+    while (b != 0) {
+        q = a / b;
+        r = a % b;
+        ytemp = y1 - q * y2;
+        xtemp = x1 - q * x2;
+        y1 = y2; 
+        x1 = x2;
+        y2 = ytemp; 
+        x2 = xtemp;
+        a = b; 
+        b = r;
+    }
+    if(y1<0) y1 += temp;
+    return y1;
+}
+
 int main(){
     int p;
     int a,b,x1,y1,x2,y2;

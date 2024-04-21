@@ -27,12 +27,6 @@
 
 using namespace std;
 
-int gcd(int a, int b) {
-    if (b == 0)
-        return a;
-    return gcd(b, a % b);
-}
-
 int power(int x, unsigned int y, int p) {
     int res = 1;
     x = x % p;
@@ -79,7 +73,7 @@ int main() {
     int r = 2; //g
     int m = 8; //msg
     int a_private = 5; //d
-    int b_private = 6; //d
+    int b_private = 6; //k
 
     // Alice (Receiver)
     int h_a = power(r, a_private, q); // Compute public key  // e

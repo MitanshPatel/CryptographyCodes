@@ -24,10 +24,16 @@
 #include <iostream>
 using namespace std;
 
-int power(int a, int b, int P){
-	if (b == 1) return a;
-
-	else return (((int)pow(a, b)) % P);
+int power(int base, int exp, int mod){
+	int res = 1;
+    while (exp > 0)
+    {
+        if (exp % 2 == 1)
+            res = (res * base) % mod;
+        exp = exp >> 1;
+        base = (base * base) % mod;
+    }
+    return res;
 }
 
 int main(){

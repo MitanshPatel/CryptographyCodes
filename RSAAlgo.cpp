@@ -67,6 +67,8 @@
 // }
 
 
+//BETTER DO FROM THEORY, CODE IS COMPLEX
+
 #include <iostream>
 #include <math.h>
 using namespace std;
