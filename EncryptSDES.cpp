@@ -1,3 +1,11 @@
+// For example:
+
+// Input	Result
+// 00101000  10001010
+// 11101001
+// 10100111
+
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -121,25 +129,24 @@ void encryption(vector<int> plaintext, vector<int> key1, vector<int> key2) {
 }
 
 int main(){
-    vector<int>plaintext, key1, key2;
-    long long binaryNum;
-    cin>>binaryNum;
-    for(int i=0; i<8; i++){
-        int digit = binaryNum % 10;
-        plaintext.insert(plaintext.begin(), digit);  // Insert at the beginning to maintain order
-        binaryNum /= 10;
+    string str;
+    cin>>str;
+    vector<int> plaintext(str.size());
+    int i=0;
+    for(char c:str){
+        plaintext[i++]=c-'0';
     }
-    cin>>binaryNum;
-    for(int i=0; i<8; i++){
-        int digit = binaryNum % 10;
-        key1.insert(key1.begin(), digit);  // Insert at the beginning to maintain order
-        binaryNum /= 10;
+    cin>>str;
+    vector<int> key1(str.size());
+    i=0;
+    for(char c:str){
+        key1[i++]=c-'0';
     }
-    cin>>binaryNum;
-    for(int i=0; i<8; i++){
-        int digit = binaryNum % 10;
-        key2.insert(key2.begin(), digit);  // Insert at the beginning to maintain order
-        binaryNum /= 10;
+    cin>>str;
+    vector<int> key2(str.size());
+    i=0;
+    for(char c:str){
+        key2[i++]=c-'0';
     }
     encryption(plaintext, key1, key2);
 }

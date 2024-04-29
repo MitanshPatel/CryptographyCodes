@@ -123,25 +123,24 @@ void decryption(vector<int> ciphertext, vector<int> key2, vector<int> key1) {
 }
 
 int main(){
-    vector<int>ciphertext, key1, key2;
-    long long binaryNum;
-    cin>>binaryNum;
-    for(int i=0; i<8; i++){
-        int digit = binaryNum % 10;
-        ciphertext.insert(ciphertext.begin(), digit);  // Insert at the beginning to maintain order
-        binaryNum /= 10;
+    string str;
+    cin>>str;
+    vector<int> ciphertext(str.size());
+    int i=0;
+    for(char c:str){
+        ciphertext[i++]=c-'0';
     }
-    cin>>binaryNum;
-    for(int i=0; i<8; i++){
-        int digit = binaryNum % 10;
-        key1.insert(key1.begin(), digit);  // Insert at the beginning to maintain order
-        binaryNum /= 10;
+    cin>>str;
+    vector<int> key1(str.size());
+    i=0;
+    for(char c:str){
+        key1[i++]=c-'0';
     }
-    cin>>binaryNum;
-    for(int i=0; i<8; i++){
-        int digit = binaryNum % 10;
-        key2.insert(key2.begin(), digit);  // Insert at the beginning to maintain order
-        binaryNum /= 10;
+    cin>>str;
+    vector<int> key2(str.size());
+    i=0;
+    for(char c:str){
+        key2[i++]=c-'0';
     }
     decryption(ciphertext, key2, key1);
 }

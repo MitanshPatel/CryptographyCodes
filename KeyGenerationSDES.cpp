@@ -76,13 +76,12 @@ void keyGeneration(vector<int> key) {
 
 
 int main() {
-    vector<int> key;
-    long long binaryNum;
-    cin>>binaryNum;
-    for(int i=0; i<10; i++){
-        int digit = binaryNum % 10;
-        key.insert(key.begin(), digit);  // Insert at the beginning to maintain order
-        binaryNum /= 10;
+    string str;
+    cin>>str;
+    vector<int> key(str.size());
+    int i=0;
+    for(char c:str){
+        key[i++]=c-'0';
     }
     //for(int c:key) cout<<c<<" ";
     keyGeneration(key);

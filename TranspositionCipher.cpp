@@ -232,7 +232,6 @@ string decryptMessage(string cipher)
 	/* Arrange the matrix column wise according 
 	to permutation order by adding into new matrix */
 	char decCipher[row][col];
-	auto ii=keyMap.begin();
 	k = 0;
 	for (int l=0; l<key.size(); l++){
 		int j = keyMap[key[l]];
