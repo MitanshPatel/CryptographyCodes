@@ -32,9 +32,7 @@ int main(){
     int lambda, temp1, temp2, t=1;
     temp1=(y2-y1)%p; //numerator of lambda
     temp2=(x2-x1); //denominator of lambda
-    while((temp2*t)%p!=1){  //inverse modulo
-        t++;
-    }
+    t=inverseMod(temp2, p);
     lambda=(temp1*t)%p;
     int x3,y3;
     x3=((lambda*lambda-x1-x2)%p);

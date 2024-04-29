@@ -197,8 +197,8 @@ string encryptMessage(string msg)
 		}
 	}
 
-	for (auto ii = keyMap.begin(); ii!=keyMap.end(); ++ii){  // ascending wise so a->2,e->1,h->0,l->3
-		j=ii->second;
+	for (auto ii : keyMap){  // ascending wise so a->2,e->1,h->0,l->3
+		j=ii.second;
 		// getting cipher text from matrix column wise using permuted key
 		for (int i=0; i<row; i++){
 			cipher += matrix[i][j];
@@ -226,8 +226,8 @@ string decryptMessage(string cipher)
     }
 	/* update the order of key for decryption */
 	int index = 0;
-	for( auto ii=keyMap.begin(); ii!=keyMap.end(); ++ii)  // so that, a->0, e->1, h->2, l->3.
-		ii->second = index++;
+	for( auto ii: keyMap)  // so that, a->0, e->1, h->2, l->3.
+		ii.second = index++;
 
 	/* Arrange the matrix column wise according 
 	to permutation order by adding into new matrix */

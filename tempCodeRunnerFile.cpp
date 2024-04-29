@@ -1,1 +1,3 @@
-17 2 2 5 1
+ // while((temp2*t)%p!=1){  //inverse modulo
+    //     t++;
+    // }
